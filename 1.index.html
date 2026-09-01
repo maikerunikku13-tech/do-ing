@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page A</title>
+  <style>
+    body{
+      height:100vh;
+      display:grid;
+      place-items:center;
+      margin:0;
+      background:#111;
+    }
+    .play-btn{
+      width:72px;height:72px;border-radius:999px;
+      background: rgba(17,24,39,.92);
+      box-shadow: 0 16px 35px rgba(0,0,0,.42);
+      display:grid;place-items:center;
+      cursor:pointer;text-decoration:none;user-select:none;
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+      position:relative;z-index:1;
+      border:none; outline:none;
+    }
+    .play-btn:hover{ transform: translateY(-3px) scale(1.02); background: rgba(11,18,32,.96); }
+    .play-btn:active{ transform: translateY(2px) scale(.98); }
+    .icon{
+      width:0;height:0;
+      border-left:18px solid #fff;
+      border-top:11px solid transparent;
+      border-bottom:11px solid transparent;
+      margin-left:3px;opacity:.95;
+    }
+  </style>
+</head>
+<body>
+  <!-- A → Bへ（同フォルダ） -->
+  <a class="play-btn" href="./2.html" target="_self" aria-label="次へ" role="button">
+    <span class="icon" aria-hidden="true"></span>
+  </a>
+</body>
+</html>
