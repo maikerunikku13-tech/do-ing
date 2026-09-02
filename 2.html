@@ -17,47 +17,41 @@
 }
     }
 
-    /* 再生ボタン（見た目は固定） */
-    .play-btn{
-      width:78px;
-      height:78px;
-      border-radius:999px;
-      background: rgba(17,24,39,.92);
-      box-shadow: 0 16px 35px rgba(0,0,0,.42);
-      display:grid;
-      place-items:center;
-      cursor:pointer;
-      user-select:none;
-      text-decoration:none;
-      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
-      position:relative;
-      z-index:1;
-      border:none;
-      outline:none;
-    }
+ .play-btn{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 86px;
+  height: 86px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.45);      /* 背景に馴染む半透明 */
+  backdrop-filter: blur(4px);       /* ぼかし（対応ブラウザのみ） */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
 
-    /* ホバー/押し込みだけ */
-    .play-btn:hover{
-      transform: translateY(-3px) scale(1.02);
-      background: rgba(11,18,32,.96);
-    }
-    .play-btn:active{
-      transform: translateY(2px) scale(.98);
-    }
+.tri{
+  width: 0;
+  height: 0;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 22px solid rgba(255,255,255,0.95); /* ▶ */
+  margin-left: 6px; /* 見た目調整 */
+}
 
-    /* ▶マーク */
-    .icon{
-      width:0;height:0;
-      border-left:18px solid #fff;
-      border-top:11px solid transparent;
-      border-bottom:11px solid transparent;
-      margin-left:3px;
-      opacity:.95;
-    }
-
-    .play-btn:focus-visible{
-      box-shadow: 0 0 0 3px rgba(255,255,255,.22), 0 22px 55px rgba(0,0,0,.52);
-    }
+/* ON（再生中）っぽい見た目 */
+.play-btn.is-playing{
+  background: rgba(30, 255, 120, 0.18);
+  border-color: rgba(30, 255, 120, 0.6);
+}
+.play-btn.is-playing .tri{
+  border-left-color: rgba(30, 255, 120, 0.95);
+}
   </style>
 </head>
 <body>
